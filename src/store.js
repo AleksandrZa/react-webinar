@@ -71,14 +71,13 @@ class Store {
    * Выделение записи по её коду
    * @param code
    */
-  selectItem(code, count) {
-    count++;
+  selectItem(code) {
     this.setState({
       items: this.state.items.map(item => {
         if (item.code === code){
           item.selected = !item.selected;
           if (item.selected) {
-            item.counter = count;
+            item.counter++;
           }
         }
         return item;
